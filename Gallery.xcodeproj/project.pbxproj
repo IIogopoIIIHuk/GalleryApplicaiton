@@ -208,6 +208,11 @@
 			);
 			mainGroup = 289D02F92E5A161300E688FE;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				289D037D2E5A17EF00E688FE /* XCRemoteSwiftPackageReference "realm-swift" */,
+				289D037E2E5A180400E688FE /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				289D037F2E5A182E00E688FE /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 289D03032E5A161300E688FE /* Products */;
 			projectDirPath = "";
@@ -563,6 +568,33 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		289D037D2E5A17EF00E688FE /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		289D037E2E5A180400E688FE /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.5.0;
+			};
+		};
+		289D037F2E5A182E00E688FE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 289D02FA2E5A161300E688FE /* Project object */;
 }
