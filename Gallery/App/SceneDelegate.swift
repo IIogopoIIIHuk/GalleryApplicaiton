@@ -1,9 +1,3 @@
-//
-//  SceneDelegate.swift
-//  Gallery
-//
-//  Created by Александр Мамчиц on 8/23/25.
-//
 
 import UIKit
 
@@ -12,13 +6,61 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+    func scene(_ scene: UIScene,
+               willConnectTo session: UISceneSession,
+               options connectionOptions: UIScene.ConnectionOptions) {
+
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
+        self.window = window
+
+        let splash = SplashViewController()
+        splash.onFinish = { [weak self] in
+            guard let self = self else { return }
+            let main = self.makeMainInterface()
+            self.setRootViewController(main, animated: true)
+        }
+
+        window.rootViewController = splash
+        window.makeKeyAndVisible()
     }
 
+    private func makeMainInterface() -> UIViewController {
+        let galleryVC = GalleryViewController()
+        let galleryNC = UINavigationController(rootViewController: galleryVC)
+        galleryNC.tabBarItem = UITabBarItem(title: "Gallery",
+                                            image: UIImage(systemName: "photo"),
+                                            selectedImage: UIImage(systemName: "photo.fill"))
+
+        let favoritesVC = FavoriteImageViewController()
+        let favoritesNC = UINavigationController(rootViewController: favoritesVC)
+        favoritesNC.tabBarItem = UITabBarItem(title: "Favorites",
+                                              image: UIImage(systemName: "heart"),
+                                              selectedImage: UIImage(systemName: "heart.fill"))
+
+        let tab = UITabBarController()
+        tab.viewControllers = [galleryNC, favoritesNC]
+        return tab
+    }
+
+    private func setRootViewController(_ vc: UIViewController, animated: Bool) {
+        guard let window = self.window else { return }
+        guard animated else { window.rootViewController = vc; window.makeKeyAndVisible(); return }
+
+        let snapshot = window.snapshotView(afterScreenUpdates: true) ?? UIView()
+        vc.view.addSubview(snapshot)
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+
+        UIView.animate(withDuration: 0.9, delay: 0, options: [.curveEaseInOut], animations: {
+            snapshot.alpha = 0
+            snapshot.transform = CGAffineTransform(scaleX: 1.06, y: 1.06)
+        }, completion: { _ in
+            snapshot.removeFromSuperview()
+        })
+    }
+
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
