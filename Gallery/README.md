@@ -1,65 +1,64 @@
 # GalleryApp
 
-🖼 iOS-приложение-галерея на UIKit.  
-Разработано в рамках тестового задания.  
+🖼 iOS image gallery app built with **UIKit**.   
 
 ---
 
 ## Project Overview
 
-**Цель:** создать приложение-галерею с загрузкой картинок из API, детальным просмотром и возможностью добавлять фото в избранное.  
-Приложение построено на **MVVM с разделением слоёв Domain / Data / Presentation**, использует **Alamofire**, **Kingfisher** и **RealmSwift**.  
+GalleryApp is an image gallery application that loads pictures from the **Unsplash API**, provides a detail view, and allows users to manage their favorite photos.  
+The app is built with **MVVM** and clear separation of layers (**Domain / Data / Presentation**).  
+It uses **Alamofire** for networking, **Kingfisher** for image caching and smooth transitions, and **RealmSwift** for local persistence.  
 
 ---
 
-## Requirements из ТЗ и их реализация ✅
+## Features 
 
-### 1. Экран Галереи
-- [x] Сетка (UICollectionView) с подгрузкой картинок (Unsplash API).
-- [x] Пагинация при прокрутке.
-- [x] Тап по фото → переход в детальный экран.
-- [x] Индикатор избранного на превью.
+### 1. Gallery Screen
+- [x] Grid layout (UICollectionView) loading images from Unsplash API.  
+- [x] Pagination when scrolling.  
+- [x] Tap on an image → navigate to the detail screen.  
+- [x] Favorites indicator on thumbnails.  
 
-### 2. Экран Деталей
-- [x] Просмотр выбранного изображения в большом размере.
-- [x] Дополнительные данные: автор (name, username).
-- [x] Кнопка «сердце» для избранного.
-- [x] Swipe-навигация между картинками.
-- [x] Сохранение заметок к фото (бонус-функция).
+### 2. Detail Screen
+- [x] Full-size image view.  
+- [x] Pinch-to-zoom for closer inspection.  
+- [x] Display additional data: author (name, username) and image description.  
+- [x] Heart button to mark/unmark as favorite.  
+- [x] Swipe navigation between images.  
+- [x] Ability to leave personal notes for each image (persisted in Realm).  
+- [x] Share image using the system share sheet.  
 
 ### 3. Networking
-- [x] Unsplash API (`/photos`, 30 элементов).
-- [x] Alamofire для запросов.
-- [x] Асинхронная подгрузка, обработка ошибок.
+- [x] Unsplash API (`/photos`, 30 items per request).  
+- [x] Alamofire for network requests.  
+- [x] Asynchronous loading and error handling.  
 
 ### 4. Persistence
-- [x] Избранное сохраняется в Realm.
-- [x] Локальное хранение заметок к фото.
-- [x] При повторном запуске избранное загружается.
+- [x] Favorites stored in Realm.  
+- [x] Personal notes stored locally for each image.  
+- [x] Favorites and notes are preserved after app restart.  
 
 ### 5. UI/UX
-- [x] Чистая и удобная сетка.
-- [x] Kingfisher для кеширования + плавные переходы.
-- [x] Поддержка разных размеров экранов.
-- [x] Splash-экран с анимацией (доп.фича).
+- [x] Clean and intuitive grid layout.  
+- [x] Kingfisher for caching and smooth fade-in transitions.  
+- [x] Support for different screen sizes.  
+- [x] Animated splash screen.  
 
-### 6. Архитектура / качество кода
-- [x] MVVM, разделение на Domain/Data/Presentation.
-- [x] Логика вынесена в UseCases и ViewModels.
-- [x] Git-история структурирована (Conventional Commits).
-- [x] Используется `.gitignore`.
-- [ ] SwiftLint — легко подключается, в проекте предусмотрено.
+### 6. Architecture / Code Quality
+- [x] MVVM with clear separation between Domain/Data/Presentation.  
+- [x] Business logic moved into UseCases and ViewModels.  
+- [x] Git history follows Conventional Commits.  
 
 ---
 
 ## Additional Features
 
-- 🟢 **Splash Screen** с кастомной анимацией (не было в ТЗ).  
-- 🟢 **Заметки для избранного** (persisted в Realm).  
-- 🟢 **Кеш изображений** (Kingfisher).  
-- 🟢 **UI-улучшения**: fade-анимация при загрузке, activity индикаторы.  
+- 🟢 **Animated Splash Screen** with custom animation.  
+- 🟢 **Notes for each favorite** (persisted with Realm).  
+- 🟢 **Image description** displayed on the detail screen.  
+- 🟢 **Pinch-to-zoom** in detail view.  
+- 🟢 **Image sharing** via system share sheet.  
+- 🟢 **Enhanced UI/UX**: fade-in transitions, loading indicators.  
 
 ---
-
-## Architecture
-
