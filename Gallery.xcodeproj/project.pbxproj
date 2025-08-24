@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		289D03B82E5A1E3D00E688FE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 289D03B72E5A1E3D00E688FE /* RealmSwift */; };
+		289D03B92E5A1E3D00E688FE /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 289D03B72E5A1E3D00E688FE /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		289D03BC2E5A1E4900E688FE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 289D03BB2E5A1E4900E688FE /* Alamofire */; };
+		289D03BE2E5A1E4F00E688FE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 289D03BD2E5A1E4F00E688FE /* Kingfisher */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		289D03192E5A161400E688FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -22,6 +29,20 @@
 			remoteInfo = Gallery;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		289D03BA2E5A1E3E00E688FE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				289D03B92E5A1E3D00E688FE /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		289D03022E5A161300E688FE /* Gallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +86,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				289D03BE2E5A1E4F00E688FE /* Kingfisher in Frameworks */,
+				289D03B82E5A1E3D00E688FE /* RealmSwift in Frameworks */,
+				289D03BC2E5A1E4900E688FE /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +115,7 @@
 				289D03042E5A161300E688FE /* Gallery */,
 				289D031B2E5A161400E688FE /* GalleryTests */,
 				289D03252E5A161400E688FE /* GalleryUITests */,
+				289D03B62E5A1E3D00E688FE /* Frameworks */,
 				289D03032E5A161300E688FE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,6 +130,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		289D03B62E5A1E3D00E688FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,6 +147,7 @@
 				289D02FE2E5A161300E688FE /* Sources */,
 				289D02FF2E5A161300E688FE /* Frameworks */,
 				289D03002E5A161300E688FE /* Resources */,
+				289D03BA2E5A1E3E00E688FE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,6 +158,9 @@
 			);
 			name = Gallery;
 			packageProductDependencies = (
+				289D03B72E5A1E3D00E688FE /* RealmSwift */,
+				289D03BB2E5A1E4900E688FE /* Alamofire */,
+				289D03BD2E5A1E4F00E688FE /* Kingfisher */,
 			);
 			productName = Gallery;
 			productReference = 289D03022E5A161300E688FE /* Gallery.app */;
@@ -301,6 +337,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,6 +365,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -595,6 +633,24 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		289D03B72E5A1E3D00E688FE /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 289D037D2E5A17EF00E688FE /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		289D03BB2E5A1E4900E688FE /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 289D037F2E5A182E00E688FE /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		289D03BD2E5A1E4F00E688FE /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 289D037E2E5A180400E688FE /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 289D02FA2E5A161300E688FE /* Project object */;
 }
